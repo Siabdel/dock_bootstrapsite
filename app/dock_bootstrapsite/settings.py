@@ -26,6 +26,7 @@ SECRET_KEY = os.environ.get(
     "SECRET_KEY", default="bismiALLAHzrgfzoku*j1p1verj1hbf0fpj%@5b73-%-)4p")
 
 DEBUG = int(os.environ.get("DEBUG", default=0))
+DEBUG = 1
 
 # 'DJANGO_ALLOWED_HOSTS' should be a single string of hosts with a space between each.
 # For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
@@ -58,7 +59,9 @@ ROOT_URLCONF = 'dock_bootstrapsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'portail', 'templates'),
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
