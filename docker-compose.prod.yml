@@ -2,6 +2,7 @@ version: '3.7'
 
 services:
   web:
+    container_name: bootstrapsite_prod_web
     build: 
       context: ./app
       dockerfile: Dockerfile.prod
@@ -15,6 +16,7 @@ services:
     depends_on:
       - db
   db:
+    container_name: bootstrapsite_db
     image: postgres:13.0-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
@@ -22,6 +24,7 @@ services:
       - ./.env.prod.db
  
   nginx:
+    container_name: bootstrapsite_nginx
     build: ./nginx
     volumes:
       - static_volume:/home/app/web/staticfiles
