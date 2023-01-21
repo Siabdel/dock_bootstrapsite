@@ -11,4 +11,7 @@ def home(request):
     context['DEBUG']         = settings.DEBUG 
     context['ALLOWED_HOSTS'] = settings.ALLOWED_HOSTS
 
+    context['banner_title'] = "Bienvenue à notre  agence web"
+    context['banner_content'] = "Bienvenue à notre  agence web"
+
     return render(request, template_name="home/home_page.html", context=context)
