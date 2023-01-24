@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from portail import views
 
 urlpatterns = [
-    path('', include('portail.urls')),
     path('admin/', admin.site.urls),
+    path('', include('portail.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
